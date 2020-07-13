@@ -1,6 +1,6 @@
 import React from "react";
 import {Container, Row, Col, Card, Form, Button } from "react-bootstrap";
-//import { withRouter } from "react-router";
+import { withRouter } from "react-router";
 import Sidebar from "./SideNav";
 import './SideNav.css'
 import MyShop from "./Shop.jsx";
@@ -15,10 +15,12 @@ class Homepage extends React.Component {
         this.setState({category})
       };
 
+    incrementCart = (count) => {
+        this.props.addToCart(count)
+    }
+
 
     render(){
-        // console.log(this.props)
-        // console.log(this.state.category)
         return (
             <>
                 <>
@@ -27,7 +29,7 @@ class Homepage extends React.Component {
                           <Sidebar showCategory={this.displayCategory}/>
                         </Col>
                         <Col xs={10} id="page-content-wrapper">
-                          <MyShop displayCategory={this.state.category}/>
+                          <MyShop displayCategory={this.state.category} updateCart={this.incrementCart}/>
                         </Col> 
                     </Row>
     
@@ -37,4 +39,4 @@ class Homepage extends React.Component {
         }
   };
   //const Homepage = withRouter(Home);
-  export default Homepage
+  export default withRouter(Homepage)
