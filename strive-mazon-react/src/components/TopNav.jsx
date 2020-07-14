@@ -5,6 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 
 class NavBar extends React.Component {
+    state={
+        
+    }
+
     render() {
 
         return (
@@ -28,7 +32,7 @@ class NavBar extends React.Component {
                     {/* <Nav>
                         <Nav.Link href="#">Search</Nav.Link>
                     </Nav> */}
-                    <FontAwesomeIcon icon={faCartPlus} className="mt-4"/>
+                    <FontAwesomeIcon icon={faCartPlus} className="mt-4" onClick={()=>this.props.history.push("/checkout")}/>
                     <Badge variant="info">{this.props.updateProductInCart ?this.props.updateProductInCart :0}</Badge>
                 </Navbar.Collapse>
             </Navbar>
