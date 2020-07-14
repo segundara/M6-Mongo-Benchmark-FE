@@ -140,6 +140,7 @@ class MyShop extends React.Component {
           }
         return (
             <>
+            {this.props.checkout && (this.props.history.push("/checkout"))}
             <Container fluid className="pt-5">
                 <p>Section: {this.props.displayCategory === "" ? "ALL-CATEGORY" : this.props.displayCategory.toUpperCase()}</p>
                 <p className="pt-3">Total products found: {this.state.numOfProduct}</p>
