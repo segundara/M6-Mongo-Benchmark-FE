@@ -29,7 +29,7 @@ class Homepage extends React.Component {
                           <Sidebar showCategory={this.displayCategory}/>
                         </Col>
                         <Col xs={10} id="page-content-wrapper">
-                          <MyShop displayCategory={this.state.category} updateCart={this.incrementCart}/>
+                          <MyShop displayCategory={this.state.category} updateCart={this.incrementCart} />
                         </Col> 
                     </Row>
     
